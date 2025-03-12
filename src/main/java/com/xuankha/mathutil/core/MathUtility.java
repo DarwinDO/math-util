@@ -17,21 +17,33 @@ public class MathUtility {
 
 
     public static long getFactorial(int n){
+//        if ( n < 0 || n > 20){
+//            // return -1;
+//            throw new IllegalArgumentException("Invalid n. n must be betwewn 0 to 20");
+//        }
+//        if (n == 0 ){
+//            return 1;
+//        }
+//        // khỏi viết else cho code nhìn đẹp
+//        // n bắt đầu từ 1
+//        // thuật toán con heo đất, nhân dần , cộng dồn
+//        long result = 1;
+//        for (int i = 1; i <= n; i++){
+//            result *= i ; // i bị nhân dồn vào resule = result * i
+//        }
+//       return result;
+//    }
+
+        // CHUYỂN SANG TÍNH GIAI THỪA BẰNG ĐỆ QUY , GỌI LẠI CHÍNH MÌNH VỚI QUY MÔ NHỎ HƠN
+        //N! = N* (N-1)!
         if ( n < 0 || n > 20){
             // return -1;
             throw new IllegalArgumentException("Invalid n. n must be betwewn 0 to 20");
         }
-        if (n == 0 ){
+        if (n == 0  || n == 1){
             return 1;
         }
-        // khỏi viết else cho code nhìn đẹp
-        // n bắt đầu từ 1
-        // thuật toán con heo đất, nhân dần , cộng dồn
-        long result = 1;
-        for (int i = 1; i <= n; i++){
-            result *= i ; // i bị nhân dồn vào resule = result * i
-        }
-       return result;
+        return  n * getFactorial(n-1);
     }
 
 
